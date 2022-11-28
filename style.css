@@ -1,0 +1,21 @@
+body {
+    background-color: azure;
+}
+
+.stage {
+    display: flex;
+    justify-content: center;
+
+}
+
+.stage>div {
+    margin-top: 60px;
+}
+
+
+
+button {
+    margin: 20px auto;
+    width: 100%;
+    height: 40px;
+}
