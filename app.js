@@ -8,9 +8,13 @@ if ("serviceWorker" in navigator) {
 }
 const pasteOpt = () => {
     debugger;
-    let value = document.execCommand("paste");
     let element = document.getElementById("pasteHolder");
-    element.innerHTML = value;
+    navigator.clipboard.readText().then(data => {
+        element.innerHTML = data;
+
+    }).catch(() => { console.error("clipboard not support") })
+    //let value = document.execCommand("paste");
+
 }
 const shareCode = async () => {
 
