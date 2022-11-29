@@ -8,7 +8,8 @@ if ("serviceWorker" in navigator) {
     })
 }
 const pasteOpt = () => {
-    document.execCommand("paste");
+    let el = document.getElementById("pasteHolder");
+    navigator.clipboard.read().then(data => { console.log("data is", data); el.innerText = data.toString() })
 }
 const shareCode = async () => {
 
