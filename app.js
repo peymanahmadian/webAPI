@@ -1,4 +1,4 @@
-import * as clipboard from "clipboard-polyfill";
+
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
         navigator.serviceWorker
