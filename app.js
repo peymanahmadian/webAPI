@@ -8,12 +8,8 @@ if ("serviceWorker" in navigator) {
     })
 }
 const pasteOpt = () => {
-    var textarea = document.createElement("pasteHolder");
-    textarea.contentEditable = true;
-    // insert textarea somewhere in your document
-    textarea.focus();
-    document.execCommand("paste");
-
+    let a = new window.Clipboard();
+    a.readText().then(data => console.log(data));
 }
 const shareCode = async () => {
 
