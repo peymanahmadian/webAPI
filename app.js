@@ -1,3 +1,4 @@
+import * as clipboard from "clipboard-polyfill";
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
         navigator.serviceWorker
@@ -7,9 +8,11 @@ if ("serviceWorker" in navigator) {
     })
 }
 const pasteOpt = () => {
+
+
     debugger;
     let element = document.getElementById("pasteHolder");
-    navigator.clipboard.readText().then(data => {
+    clipboard.readText().then(data => {
         element.innerHTML = data;
 
     }).catch(() => { console.error("clipboard not support") })
