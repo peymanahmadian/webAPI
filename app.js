@@ -8,15 +8,11 @@ if ("serviceWorker" in navigator) {
     })
 }
 const pasteOpt = () => {
-
-
-    debugger;
-    let element = document.getElementById("pasteHolder");
-    clipboard.readText().then(data => {
-        element.innerHTML = data;
-
-    }).catch(() => { console.error("clipboard not support") })
-    //let value = document.execCommand("paste");
+    var textarea = document.createElement("pasteHolder");
+    textarea.contentEditable = true;
+    // insert textarea somewhere in your document
+    textarea.focus();
+    document.execCommand("paste");
 
 }
 const shareCode = async () => {
