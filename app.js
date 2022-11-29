@@ -6,8 +6,14 @@ if ("serviceWorker" in navigator) {
             .catch(err => console.log("service worker not registered", err))
     })
 }
-const shareCode = async () => {
+const pasteOpt = () => {
     debugger;
+    let value = document.execCommand("paste");
+    let element = document.getElementById("pasteHolder");
+    element.innerHTML = value;
+}
+const shareCode = async () => {
+
     if (navigator.share) {
         navigator
             .share({
