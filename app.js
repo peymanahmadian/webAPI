@@ -8,8 +8,7 @@ if ("serviceWorker" in navigator) {
     })
 }
 const pasteOpt = () => {
-    let a = new window.Clipboard();
-    a.readText().then(data => console.log(data));
+    document.execCommand("paste");
 }
 const shareCode = async () => {
 
